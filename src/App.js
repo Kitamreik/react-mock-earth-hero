@@ -101,10 +101,15 @@ export default function App() {
         <p>Well, there’s not quite a million in our database, but there’s bound to be something for everyone here. Start small and work your way up!</p>
 
         <h3>Our recommendations</h3>
-
+          <img src='.././recommendations.png' alt='the recommendations section'></img>
+        <h3>Browse by Categories</h3>
+          <img src='.././categories.png' alt='the category section'></img>
+        <h3>All Actions</h3>
+          <img src='.././actions.png' alt='the all actions section'></img>
       </>
     )
   }
+  // you cannot have the word public in the path directory, so use ./
 
   function Groups() {
     return (
