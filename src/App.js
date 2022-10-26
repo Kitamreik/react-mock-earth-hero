@@ -24,6 +24,10 @@ import SignUpForm from './components/SignUpForm';
 export default function App() {
   const navigate = useNavigate();
 
+  const navigateToActions = () => {
+    navigate('/actions', {replace: true});
+  };
+
   const navigateToContacts = () => {
     navigate('/contacts', {replace: true});
   };
@@ -49,11 +53,32 @@ export default function App() {
   };
 
   function Home() {
-    return <h2>Home</h2>;
+    return (
+    <>
+      <h2>Home</h2>
+      <h3>Take action for people & planet</h3>
+      <p>Respond to climate change by discovering personalised, positive steps we can take to care for our planet and communities. It's our future to choose</p>
+    </>
+    ) 
   }
   
   function Contacts() {
-    return <h2>Contacts</h2>;
+    return (
+      <>
+        <h2>Contacts</h2>
+        <p>Have an idea to share?
+          Have a suggestion to improve on what we are doing?We would love to hear from you!</p>
+        <form>
+          <label>Your Email
+          <input type="text" placeholder="Email" name="email" id="email"></input>
+          </label>
+          <label>Message
+          <input type="text" placeholder="What's on your mind?" name="message" id="message"></input>
+          </label>
+          <label><Button>Send</Button></label>
+        </form>
+      </>
+    )
   }
 
   function App() {
@@ -63,6 +88,18 @@ export default function App() {
       </>
     )
     ;
+  }
+
+  function Actions() {
+    return (
+      <>
+        <h2>*Million Ways to make an impact</h2>
+        <p>Well, there’s not quite a million in our database, but there’s bound to be something for everyone here. Start small and work your way up!</p>
+
+        <h3>Our recommendations</h3>
+
+      </>
+    )
   }
 
   // 404 Error- EXPERIMENTAL CODE
@@ -93,8 +130,9 @@ export default function App() {
             <Button onClick={navigateHome}>Home</Button>
             <Button onClick={navigateToContacts}>Contacts</Button>
             {/* EXPERIMENTAL CODE */}
-            <Button onClick={navigateToApp}>App</Button>          
-            {/* <Button onClick={navigateToActions}>Route</Button>
+            <Button onClick={navigateToApp}>App</Button>
+            <Button onClick={navigateToActions}>Actions</Button>          
+            {/* 
             <Button onClick={navigateToGroups}>Route</Button>
             <Button onClick={navigateToTeam}>Route</Button>
             <Button onClick={navigateToDonate}>Route</Button> */}
@@ -103,13 +141,12 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/app" element={<App />} />
               <Route path="/contacts" element={<Contacts />} />
+              <Route path="/actions" element={<Actions />} />
               
               {/* <Route component={NotFound} /> - EXPERIMENTAL CODE */}
             </Routes>
           </div>
           <div>
-            Content
-            {/* <SignUpForm /> */}
           </div>
         </nav>
       </Container>
