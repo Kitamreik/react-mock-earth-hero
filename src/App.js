@@ -24,6 +24,10 @@ import SignUpForm from './components/SignUpForm';
 export default function App() {
   const navigate = useNavigate();
 
+  const navigateToGroups = () => {
+    navigate('/groups', {replace: true});
+  };
+
   const navigateToActions = () => {
     navigate('/actions', {replace: true});
   };
@@ -102,6 +106,30 @@ export default function App() {
     )
   }
 
+  function Groups() {
+    return (
+      <>
+        <h2>Want to Become a Climate Change Activist?</h2>
+
+        <h3> Join A Local Activism Group</h3>
+        <p>You want to find people who share your goals. People who you like and admire, and who are working towards something you believe in. These activists will become your community of friends and co-conspirators.
+        Logistically and emotionally, climate activism is too hard to do alone. You need support, and your voice will be more powerful when joined with your group.
+        Join multiple groups if you can. This helps prevent "silver bullet thinking" (where activists get locked into a single idea as 'the' solution), and helps build solidarity. Don't expect the group, or the people in the group to be perfect. But look for groups that are pretty well-aligned with where you're at.
+        Finding these groups in your area can be challenging. Earth Hero is currently looking to implement a feature to connect new and experienced activists to climate groups and events in their areas.
+        If no group or chapter currently exists in your area, consider starting one!</p>
+
+        <h3>Be energetic but prioritise your own health.</h3>
+        <p>If you burn out, you can't help. You might even present a challenge to other activists. Be kind to yourself.</p>
+
+        <h3>Joining groups is a gateway. But how far can you go?</h3>
+        <p>You might choose to reduce your own fossil fuel and energy use to help shift the culture. You might sue the fossil fuel industry for exploitation and predatory behaviour. How revolutionary can you get? The planet is dying around us and the damage is irreversible; now is the time to push the boundary and challenge the status quo.</p>
+
+        <h3>Climate Groups and Organisations to help you get started:</h3>
+       <img src='.././earth-hero-groups.png' alt='a list of Climate Change Organizations'></img>
+      </>
+    )
+  }
+
   // 404 Error- EXPERIMENTAL CODE
   /*
   function NotFound() {
@@ -131,9 +159,10 @@ export default function App() {
             <Button onClick={navigateToContacts}>Contacts</Button>
             {/* EXPERIMENTAL CODE */}
             <Button onClick={navigateToApp}>App</Button>
-            <Button onClick={navigateToActions}>Actions</Button>          
+            <Button onClick={navigateToActions}>Actions</Button>  
+            <Button onClick={navigateToGroups}>Groups</Button>
+
             {/* 
-            <Button onClick={navigateToGroups}>Route</Button>
             <Button onClick={navigateToTeam}>Route</Button>
             <Button onClick={navigateToDonate}>Route</Button> */}
             {/* --------------------- */}
@@ -142,7 +171,7 @@ export default function App() {
               <Route path="/app" element={<App />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/actions" element={<Actions />} />
-              
+              <Route path="/groups" element={<Groups />} />
               {/* <Route component={NotFound} /> - EXPERIMENTAL CODE */}
             </Routes>
           </div>
