@@ -21,6 +21,8 @@ The navigate() function lets us navigate programmatically.
 
 // Component Testing from app.js in react-auth
 import SignUpForm from './components/SignUpForm';
+// import AdminDashboard from './components/landing-page';
+
 
 export default function App() {
   const navigate = useNavigate();
@@ -41,6 +43,8 @@ export default function App() {
 // Add'l documentation: https://v5.reactrouter.com/web/guides/quick-start
   */ 
  
+
+
 const navigateToGetInvolved = () => {
     navigate('/get-involved', {replace: true});
   };
@@ -205,7 +209,7 @@ const navigateToDonate = () => {
     )
   }
 
-  function Donate () {
+  function Donate() {
     return (
       <>
         <h1>Support Our Mission</h1>
@@ -247,6 +251,9 @@ const navigateToDonate = () => {
     )
   }
 
+  
+  
+
   // 404 Error- EXPERIMENTAL CODE
   /*
   function NotFound() {
@@ -281,6 +288,7 @@ const navigateToDonate = () => {
             <Button onClick={navigateToGetInvolved}>Get Involved </Button>
             <Button onClick={navigateToContacts}>Contact</Button>
             <Button onClick={navigateToDonate}>Donate</Button> 
+            
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/app" element={<App />} />

@@ -39,6 +39,12 @@ function SignUpForm () {
   
       setLoading(false)
     }
+
+    const navigate = useNavigate();
+    const navigateToLandingPage = () => {
+    navigate('/landing-page', {replace: true});
+    }
+    
     return (
         <div className="SignUp">
             {/* <h3>Sign Up To Get Started</h3> */}
@@ -63,7 +69,7 @@ function SignUpForm () {
                 <input type='password'  placeholder='Confirm password' name='password' autoComplete='on' />
                 <br />
                 <div className="login">
-                    <Button disabled={loading} type="submit" value={login} onChange={(e) => setLogin(e.target.value)}>Create Account</Button>
+                    <Button disabled={loading} type="submit" value={login} onChange={(e) => setLogin(e.target.value)} onClick={navigateToLandingPage}>Create Account</Button>
                 </div>
             </form>
             <br />
@@ -79,6 +85,5 @@ function SignUpForm () {
         </div>
       );
   };
-  
-  export default SignUpForm;
 
+export default SignUpForm;
