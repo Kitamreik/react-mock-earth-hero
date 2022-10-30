@@ -20,8 +20,9 @@ The navigate() function lets us navigate programmatically.
 */ 
 
 // Component Testing from app.js in react-auth
-import SignUpForm from './components/SignUpForm';
-// import AdminDashboard from './components/landing-page';
+import SignUpForm from './components/SignUp/SignUpForm';
+import AdminDashboard from './components/landing-page';
+import LogInForm from './components/SignUp/LoginForm';
 
 
 export default function App() {
@@ -43,7 +44,10 @@ export default function App() {
 // Add'l documentation: https://v5.reactrouter.com/web/guides/quick-start
   */ 
  
-
+// admin dashboard
+const navigateLanding = () => {
+  navigate('/landing-page', {replace: true});
+}
 
 const navigateToGetInvolved = () => {
     navigate('/get-involved', {replace: true});
@@ -77,6 +81,10 @@ const navigateToDonate = () => {
     // 👇️ navigate to /
     navigate('/');
   };
+
+  const navigateToLoginForm = () => {
+      navigate('/login-form', {replace: true});
+    };
 
   // Components that Render --> "Route"
   function Home() {
@@ -113,9 +121,29 @@ const navigateToDonate = () => {
     return (
       <>
       <SignUpForm />
+      <Button onClick={navigateLanding}>Admin Login</Button>
       </>
     )
     ;
+  }
+
+  function LoginFormElement() {
+    return (
+      <>
+      <LogInForm />
+      <Button onClick={navigateLanding}>Admin Login</Button>
+      </>
+    )
+  }
+
+  // admin dashboard
+  function Landing() {
+    return (
+      <>
+        <AdminDashboard />
+      </>
+
+    )
   }
 
   function Actions() {
@@ -282,6 +310,7 @@ const navigateToDonate = () => {
             <Button onClick={navigateHome}>Home</Button>
             {/* EXPERIMENTAL CODE */}
             <Button onClick={navigateToApp}>App</Button>
+            <Button onClick={navigateToLoginForm}> Login</Button>
             <Button onClick={navigateToActions}>Actions</Button>  
             <Button onClick={navigateToGroups}>Groups</Button>
             <Button onClick={navigateToTeam}>Team</Button>
@@ -298,6 +327,13 @@ const navigateToDonate = () => {
               <Route path="/team" element={<Team />} />
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/donate" element={<Donate />} />
+              <Route path="/landing-page" element={<Landing />} />
+              <Route path="/login-form" element={<  LoginFormElement />} />
+
+
+              {/* Template */}
+              {/* <Route path="/" element={<Home />} /> */}
+              
               {/* <Route component={NotFound} /> - EXPERIMENTAL CODE */}
             </Routes>
           </div>
