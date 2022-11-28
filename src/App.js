@@ -1,10 +1,17 @@
+import React from 'react';
 import {Routes, Route, useNavigate} from 'react-router-dom';
+// import ReactDOM from 'react-dom';
 // BrowserRouter as Router from react-router-dom --> add for gatsby 
 // Bootstrap: https://react-bootstrap.github.io/getting-started/introduction/
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
+// if react-router-dom can't be detected: npm install -S react-router-dom
+// Docs: https://stackoverflow.com/questions/53914013/failed-to-compile-module-not-found-cant-resolve-react-router-dom
+
+// React must be in scope/JSX error: https://stackoverflow.com/questions/42640636/react-must-be-in-scope-when-using-jsx-react-react-in-jsx-scope
 
 /*
 // The useNavigate hook returns a function that lets us navigate programmatically, e.g. after a form is submitted or a button is clicked.
