@@ -5,7 +5,7 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 // Bootstrap: https://react-bootstrap.github.io/getting-started/introduction/
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // if react-router-dom can't be detected: npm install -S react-router-dom
